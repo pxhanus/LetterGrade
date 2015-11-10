@@ -1,4 +1,8 @@
-﻿Public Class Form1
+﻿'Patricia Hanus
+'151110
+'Letter Grade
+'________________________________________________________________________________________
+Public Class Form1
 
     Private Sub btnLetterGrade_Click(sender As Object, e As EventArgs) Handles btnLetterGrade.Click
         Const LOWEST_SCORE As Double = 0
@@ -37,17 +41,18 @@
     'post: A letter grade (A, B, C, D, or F) has been returned.
     '********************************************************************************************
     Function LetterGrade(ByVal score As Double) As Char
-        If score >= 90 Then
-            Return "A"
-        ElseIf score >= 80 Then
-            Return "B"
-        ElseIf score >= 70 Then
-            Return "C"
-        ElseIf score >= 60 Then
-            Return "D"
-        Else
-            Return "F"
-        End If
+        Select Case score
+            Case Is >= 90
+                Return "A"
+            Case Is >= 80
+                Return "B"
+            Case Is >= 70
+                Return "C"
+            Case Is >= 60
+                Return "D"
+            Case Else
+                Return "F"
+        End Select
     End Function
 
     Private Sub txtScore_TextChanged(sender As Object, e As EventArgs) Handles txtScore.TextChanged
